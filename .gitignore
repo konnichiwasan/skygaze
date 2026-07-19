@@ -1,0 +1,10 @@
+# Local secrets — never commit. Holds API keys (OpenRouter, AviationStack, etc.).
+config.json
+
+# Local runtime caches (route lookups + monthly budget counter)
+route_cache.json
+route_cache.json.tmp
+
+# Python
+__pycache__/
+*.pyc
