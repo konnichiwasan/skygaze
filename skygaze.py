@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-SkyPlanes - a ceiling planetarium + live flight tracker.
+SkyGaze - a ceiling planetarium + live flight tracker.
 
 * Pulls LIVE aircraft from the OpenSky Network around your chosen location.
 * Renders a "look straight up" (zenith-centred) dome showing:
@@ -498,7 +498,7 @@ HTML = r"""<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>SkyPlanes — observation deck</title>
+<title>SkyGaze — observation deck</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
@@ -617,7 +617,7 @@ HTML = r"""<!doctype html>
 <canvas id="sky"></canvas>
 
 <div id="title" class="ui">
-  <div class="brand">SkyPlanes</div>
+  <div class="brand">SkyGaze</div>
   <div class="rule"></div>
   <div class="sub" id="tSub">Marina Beach · Chennai</div>
 </div>
@@ -1377,7 +1377,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
                 headers={"Authorization": "Bearer " + key,
                          "Content-Type": "application/json",
                          "HTTP-Referer": "local",
-                         "X-Title": "SkyPlanes"},
+                         "X-Title": "SkyGaze"},
                 method="POST")
             try:
                 with urllib.request.urlopen(req, timeout=30) as r:
@@ -1408,7 +1408,7 @@ def main():
     print("Default location: %s (%.3f, %.3f) - use the in-app map picker to fine-tune." % (OBS["city"], OBS["lat"], OBS["lon"]))
     print("(Location is fixed to Chennai; no IP-based geolocation is used.)")
     url = "http://localhost:%d/" % PORT
-    print("SkyPlanes running -> %s" % url)
+    print("SkyGaze running -> %s" % url)
     print("Controls: SKY/RADAR, Ceiling flip, Location (Chennai map), Light theme, Sound, Fullscreen, Ask AI.")
     threading.Timer(1.0, lambda: webbrowser.open(url)).start()
     socketserver.TCPServer.allow_reuse_address = True
