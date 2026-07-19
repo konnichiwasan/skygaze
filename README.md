@@ -8,7 +8,6 @@ play when a plane passes overhead.
 
 **Inspired by:** the Toasty app Instagram post —
 https://www.instagram.com/toastytheapp/p/DZLGcnllds4/?img_index=7
-(The user saw this and asked for "a program" like it — real sky + planes overhead.)
 
 ---
 
